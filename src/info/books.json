@@ -6,7 +6,14 @@
     "pages": "100000",
     "onLoan": "false",
     "favorite": "true",
-    "dateAdded": "2010-05-13"
+    "dateAdded": "2010-05-13",
+    "genre": 
+      [
+        "reference", 
+        "imaginary", 
+        "rare",
+        "first edition"
+      ]
   },
   {
     "isbn": "9780395404256",
@@ -15,7 +22,14 @@
     "pages": "234",
     "onLoan": "true",
     "favorite": "true",
-    "dateAdded": "1993-08-23"
+    "dateAdded": "1993-08-23",
+    "genre": 
+      [
+        "sci-fi", 
+        "speculative",
+        "fiction",
+        "dystopian"
+      ]
   },
   {
     "isbn": " 9780307587053",
@@ -24,6 +38,13 @@
     "pages": "144",
     "onLoan": "false",
     "favorite": "false",
-    "dateAdded": "2012-10-28"
+    "dateAdded": "2012-10-28",
+    "genre": 
+    [
+      "reference", 
+      "knitting", 
+      "crafting",
+      "hand-made"
+    ]
   }
 ]

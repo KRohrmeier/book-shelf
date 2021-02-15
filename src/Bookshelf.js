@@ -8,13 +8,12 @@ export function Bookshelf(props) {
 
   return (
     <div className='bookshelf-container'>
-      <Row>
+      <Row className='booktitle-row'>
         <Col xs={12}>
-          <h1>Books on my Bookshelf</h1>
+          <h1>My Library</h1>
           <span id='book-count'>[{books.length} books]</span>
         </Col>
       </Row>
-      <Row className='bookshelf-list'>
         {books.map((book) => {
           return (
             <Row key={book.isbn} className='bookshelf-row'>
@@ -23,7 +22,6 @@ export function Bookshelf(props) {
             </Row>
           )
         })}
-      </Row>
     </div>
   )
 }

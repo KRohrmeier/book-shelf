@@ -4,12 +4,11 @@ import Bookshelf from './Bookshelf';
 import BookFilters from './BookFilters';
 import books from './info/books.json';
 import './App.css';
-import StupidCSS from './ihatecss';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  console.log('books: ', books);
   return (
-    <Container className="App">
+    <Container fluid="md" className="App">
         <header className="App-header">
           <h1>
             Book S(h)elf
@@ -21,7 +20,6 @@ function App() {
           <BookFilters/>
           <Bookshelf books={books}/>
         </main>
-        <StupidCSS/>
       </div>
     </Container>
   );

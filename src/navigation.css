@@ -30,7 +30,26 @@ ul[class*=navigation] {
   border-bottom: none;
 }
 
+button#logo-button {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
 #logo-id {
   display: inline;
   width: 75px;
+  cursor: pointer;
+}
+
+#logo-id:focus {
+  box-shadow: 1px 5px 15px #c3feff;
+}
+
+#logo-id:hover {
+  box-shadow: 1px 5px 15px #c3feff;
+}
+
+#logo-id:active {
+  box-shadow: 1px 5px 15px #c3feff;
 }

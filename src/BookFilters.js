@@ -9,12 +9,20 @@ export function BookFilters() {
   
   return (
       <Row className='filter-list'>
-        <DropdownButton id="dropdown-basic-button" title="Title">
+        <DropdownButton 
+            id="dropdown-basic-button" 
+            title="Title"
+            className="filter-button"
+          >
         </DropdownButton>
-        <DropdownButton id="dropdown-basic-button" title="Author">
+        <DropdownButton 
+            id="dropdown-basic-button" 
+            title="Author"
+            className="filter-button"
+          >
         </DropdownButton>
-        <Button>Favorites</Button>
-        <Button>On loan</Button>
+        <Button className="filter-button">Favorites</Button>
+        <Button className="filter-button">On loan</Button>
       </Row>
   )
 }

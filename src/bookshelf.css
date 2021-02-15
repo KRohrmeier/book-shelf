@@ -7,20 +7,19 @@
 .bookshelf-container h1 {
   color: #372601;
   margin: 0 0 1rem;
+}
+
+.booktitle-row {
   padding: 3rem 0;
+
 }
 
 .bookshelf-row {
-  display: flex;
   justify-content: center;
 }
 
 .bookshelf-row .col {
   padding: 0.25rem;
-}
-
-.title-col {
-  margin-right: 0.75rem;;
 }
 
 #book-count {

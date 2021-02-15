@@ -6,18 +6,30 @@ brown: #c78800
 */
  
  .filter-list.row {
-   display: flex;
-   flex-wrap: wrap;
    justify-content: space-around;
    align-items: center;
    list-style: none;
   }
 
-  button {
+  .btn.btn-primary {
     color: #166a6c;
-    border: 0.1rem solid #166a6c;
-    border-radius: 0.5rem;
+    background-color: RGBA(34,193,195,0.1);
+    border-color: #166a6c;
     margin: 0.45rem;
     padding: 0.45rem;
-    background-color: inherit;
+  }
+
+  .btn.btn-primary:focus {
+    color:white;
+    background-color: #166a6c;
+  }
+
+  .btn.btn-primary:hover {
+    color:white;
+    background-color: #166a6c;
+  }
+
+  .btn.btn-primary:active {
+    color:white;
+    background-color: #166a6c;
   }

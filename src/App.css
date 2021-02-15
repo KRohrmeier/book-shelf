@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  width: 100%;
+  padding: 0;
 }
 
 .App-header {
@@ -16,9 +16,4 @@
   -webkit-text-stroke-color: #00291d;
   -moz-text-stroke-width: 0.5px;  
   -webkit-text-stroke-width: 0.5px;
-}
-
-.content {
-  max-width: 1170px;
-  margin: 0 auto;
 }

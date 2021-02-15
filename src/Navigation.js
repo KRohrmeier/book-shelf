@@ -9,20 +9,22 @@ export function Navigation() {
   return (
       <Nav as='ul' className='navigation'>
       <Nav.Item as='li' href="#home">
-        <img 
+        <button id='logo-button'>
+          <img 
             id='logo-id' 
             src={logo} 
             alt='Bookshelf home'
-        />
+          />
+        </button>
       </Nav.Item>
       <Nav.Item as='li' href="#Add">
-        <Nav.Link eventKey="add-link">Add a book</Nav.Link>
+        <Nav.Link eventKey="add-link">Add</Nav.Link>
       </Nav.Item>
       <Nav.Item as='li' href="#Lend">
-        <Nav.Link eventKey="lend-link">Lend a book</Nav.Link>
+        <Nav.Link eventKey="lend-link">Lend</Nav.Link>
       </Nav.Item>
       <Nav.Item as='li' href="#Return">
-        <Nav.Link eventKey="return-link">Return a book</Nav.Link>
+        <Nav.Link eventKey="return-link">Returned</Nav.Link>
       </Nav.Item>
     </Nav>
   )
