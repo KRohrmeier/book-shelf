@@ -1,0 +1,23 @@
+/* 
+dark-turquoise: #166a6c
+turquoise: #37d4d7
+light-orange: #fec03b
+brown: #c78800 
+*/
+ 
+ .filter-list.row {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   align-items: center;
+   list-style: none;
+  }
+
+  button {
+    color: #166a6c;
+    border: 0.1rem solid #166a6c;
+    border-radius: 0.5rem;
+    margin: 0.45rem;
+    padding: 0.45rem;
+    background-color: inherit;
+  }

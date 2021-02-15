@@ -1,0 +1,28 @@
+.bookshelf-container {
+  background: linear-gradient(RGBA(253,187,45,0.19) 0%, RGBA(34,193,195,0.15) 100%);
+  color: #372601;
+  padding-bottom: 2rem;;
+}
+
+.bookshelf-container h1 {
+  color: #372601;
+  margin: 0 0 1rem;
+  padding: 3rem 0;
+}
+
+.bookshelf-row {
+  display: flex;
+  justify-content: center;
+}
+
+.bookshelf-row .col {
+  padding: 0.25rem;
+}
+
+.title-col {
+  margin-right: 0.75rem;;
+}
+
+#book-count {
+  font-size: small;
+}

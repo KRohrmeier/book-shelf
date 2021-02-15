@@ -1,0 +1,29 @@
+[
+  {
+    "isbn": "9780000000000",
+    "title": "Dictionary of Imaginary Words",
+    "author": "Kathrin Kohler",
+    "pages": "100000",
+    "onLoan": "false",
+    "favorite": "true",
+    "dateAdded": "2010-05-13"
+  },
+  {
+    "isbn": "9780395404256",
+    "title": "The Handmaid's Tale",
+    "author": "Margaret Atwood",
+    "pages": "234",
+    "onLoan": "true",
+    "favorite": "true",
+    "dateAdded": "1993-08-23"
+  },
+  {
+    "isbn": " 9780307587053",
+    "title": "Knitting Mochimochi",
+    "author": "Anna Hrachovec",
+    "pages": "144",
+    "onLoan": "false",
+    "favorite": "false",
+    "dateAdded": "2012-10-28"
+  }
+]
