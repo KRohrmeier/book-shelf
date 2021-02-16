@@ -14,24 +14,42 @@ export function AddBook() {
   const [title, setTitle] = useState('');
   const [validated, setValidated] = useState(false);
 
+  function createBookObject() {
+    const today = new Date();
+    const formattedDate = today.toISOString().slice(0,10);
+    return (
+      {
+        "isbn": "0",
+        "title": title,
+        "author": "",
+        "pages": "0",
+        "onLoan": "false",
+        "favorite": "false",
+        "dateAdded": formattedDate,
+        "genre": 
+          []
+      }
+    )
+  }
+
   function validateInput() {
     console.log('validate input; title from state = ', title);
     if (title && title.trim().length > 0) {
-      console.log(`input has length: ${title.trim().length}`);
       setTitle(title.trim());
       setValidated(true);
       return true;
     } else {
       setValidated(false);
-      console.log('validated should be false: ', validated);
       return false;
     }
   }
 
   function addNewBook() {
-    const newBook = {title: title};
+    const newBook = createBookObject();
     books.push(newBook);
-    console.log('** ** books: ', books);
+    console.log('added new book ** ** books: ', books);
+    setTitle('');
+    console.log('book title should now be blank: ', title);
   }
 
   function handleChange(e) {
@@ -39,24 +57,21 @@ export function AddBook() {
     setTitle(e.target.value);
   }
 
-  function handleFocus(e) {
+  function handleFocus() {
     if (validated) {
       setValidated(false);
-      setTitle('');
     }
-    
   }
 
   function handleSubmit(e) {
-      e.preventDefault();
-    console.log('in handleSubmit');
+    e.preventDefault();
     if (validateInput()) {
       addNewBook();
     }
   }
 
   return (
-    <Container className='add-book'>
+    <Container className='add-book book'>
       <Row>
         <Col xs={12}>
           <h1>A new book for your library?</h1>
@@ -72,7 +87,7 @@ export function AddBook() {
                   value={title}
                   isValid={validated}
                   onChange={e => handleChange(e)}
-                  onFocus={e => handleFocus(e)}
+                  onFocus={handleFocus}
               />
               <Form.Control.Feedback />
             </Form.Group>
@@ -88,7 +103,7 @@ export function AddBook() {
             <Button type='submit'>Enter new book</Button>
           </Form>
           <p className={validated ? 'success-message' : 'hidden'}>
-            {`Your new book's been added! You now have ${books.length} total titles in your library.`}
+            {`Your new book's been added! You now have ${books.length} titles in your library.`}
           </p>
     </Container>
   )

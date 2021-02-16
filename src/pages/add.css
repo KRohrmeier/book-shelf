@@ -1,13 +1,13 @@
-.add-book h1 {
+.book h1 {
   font-size: 2rem;
   margin-top: 1.5rem;
 }
 
-.add-book form {
+.book form {
   margin-bottom: 1.2rem;
 }
 
-add-book .success-message {
+.book .success-message {
   color: rgb(35, 116, 35);
 }
 
