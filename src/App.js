@@ -1,8 +1,10 @@
+import { Switch, Route, Link } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Navigation from './Navigation';
-import Bookshelf from './Bookshelf';
-import BookFilters from './BookFilters';
-import books from './info/books.json';
+import Home from './pages/Home';
+import AddBook from './pages/AddBook';
+import LendBook from './pages/LendBook';
+import ReturnBook from './pages/ReturnBook';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -15,10 +17,22 @@ function App() {
           </h1>
         </header>
       <div className='content'>
-          <Navigation/>
+          <Navigation />
         <main>
-          <BookFilters/>
-          <Bookshelf books={books}/>
+          <Switch>
+            <Route path="/add">
+              <AddBook />
+            </Route>
+            <Route path="/lend">
+              <LendBook />
+            </Route>
+            <Route path="/return">
+              <ReturnBook />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
         </main>
       </div>
     </Container>

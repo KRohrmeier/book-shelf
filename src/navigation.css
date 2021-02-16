@@ -42,14 +42,14 @@ button#logo-button {
   cursor: pointer;
 }
 
-#logo-id:focus {
+#logo-button:focus {
   box-shadow: 1px 5px 15px #c3feff;
 }
 
-#logo-id:hover {
+#logo-button:hover {
   box-shadow: 1px 5px 15px #c3feff;
 }
 
-#logo-id:active {
+#logo-button:active {
   box-shadow: 1px 5px 15px #c3feff;
 }
