@@ -18,7 +18,7 @@ export function Bookshelf(props) {
           return (
             <Row key={book.isbn} className='bookshelf-row'>
               <Col sm={6} className='title-col col'>{book.title}</Col>
-              <Col sm={6} className='author-col col'>by {book.author}</Col>
+              <Col sm={6} className='author-col col'>by {book.authors}</Col>
             </Row>
           )
         })}
