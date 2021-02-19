@@ -4,18 +4,18 @@ import { Row, Col } from "react-bootstrap";
 import './bookshelf.css';
 
 export function Bookshelf(props) {
-  const [books, setBooks] = useState([props.books]);
-  console.log('Bookshelf useState:books = ', books);
+  const bookList = props.bookList;
+  console.log('Bookshelf props:bookList = ', bookList);
 
   return (
     <div className='bookshelf-container'>
       <Row className='booktitle-row'>
         <Col xs={12}>
           <h1>My Library</h1>
-          <span id='book-count'>[{books.length} books]</span>
+          <span id='book-count'>[{bookList.length} books]</span>
         </Col>
       </Row>
-        {books.map((book) => {
+        {bookList.map((book) => {
           return (
             <Row key={book.isbn} className='bookshelf-row'>
               <Col sm={6} className='title-col col'>{book.title}</Col>

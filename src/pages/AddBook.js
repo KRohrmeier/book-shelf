@@ -5,21 +5,26 @@ import Form from 'react-bootstrap/Form';
 import books from '../info/books.json';
 import './book.css';
 
-export function AddBook() {
+export function AddBook(props) {
 
   // TODO: use an onBlur event or make the 
   // enter title / ISBN be "look-up by title / ISBN" fields 
   // that you then submit when you found the title you want
   // the onBlur or look-up fields connect to api
 
-  const [title, setTitle] = useState('');
+  const { bookList = {} } = props;
+  const [books, setBooks] = useState(bookList);
+  const [newTitle, setNewTitle] = useState('');
   const [validated, setValidated] = useState(false);
   const [returnedTitle, setReturnedTitle] = useState('');
 
   const googleAPI = "https://www.googleapis.com/books/v1/volumes";
 
+  console.log('AddBooks; props:bookList = ', bookList);
+  console.log('AddBooks; books useState = ', books);
+
   function findBook() {
-    const queryParams = encodeURIComponent(title);
+    const queryParams = encodeURIComponent(newTitle);
     const searchURL = `${googleAPI}?q=${queryParams}`;
     console.log('api url = ', searchURL);
     fetch(searchURL)
@@ -31,6 +36,9 @@ export function AddBook() {
           const apiPageCount = data.items[0].volumeInfo.pageCount;
           const apiTitle = data.items[0].volumeInfo.title;
           setReturnedTitle(apiTitle);
+          console.log('setReturnedTitle with apiTitle: ', apiTitle);
+          console.log('getReturnedTitle = ', returnedTitle);
+          // setting returnedTitle above does not work??
           addNewBook(createBookObject(authors, apiGenre, apiIsbn, apiPageCount, apiTitle));
         })
         .catch(error => console.error(`error : ${error}`));
@@ -54,9 +62,9 @@ export function AddBook() {
   }
 
   function validateInput() {
-    console.log('validate input; title from state = ', title);
-    if (title && title.trim().length > 0) {
-      setTitle(title.trim());
+    console.log('validate input; title from state = ', newTitle);
+    if (newTitle && newTitle.trim().length > 0) {
+      setNewTitle(newTitle.trim());
       setValidated(true);
       return true;
     } else {
@@ -66,12 +74,23 @@ export function AddBook() {
   }
 
   function addNewBook(newBook) {
-    books.push(newBook);
-    setTitle('');
+    // TODO: take new book info and add to db
+    // QUESTION: will that retrigger a render (since db changed?)
+    const encodedTitle = encodeURIComponent(newBook.title);
+    const apiCall = `/addBook/${encodedTitle}`;
+    console.log('title from parameter = ', newBook.title)
+    console.log('apiCall = ', apiCall);
+    fetch(apiCall)
+        .then(res => res.json())
+        .then(addedBook => {
+          console.log('api returns the added book = ', addedBook);
+        })
   }
 
   function handleChange(e) {
-    setTitle(e.target.value);
+    setNewTitle(e.target.value);
+    console.log('handleChange setNewTitle to ', e.target.value);
+    console.log('new title should match handleChange setNewTitle ', newTitle);
   }
 
   function handleFocus() {
@@ -101,7 +120,7 @@ export function AddBook() {
               <Form.Control 
                   size='lg'
                   type='text'
-                  value={title}
+                  value={newTitle}
                   isValid={validated}
                   onChange={e => handleChange(e)}
                   onFocus={handleFocus}

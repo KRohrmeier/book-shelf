@@ -1,6 +1,6 @@
-[
+{"books": [
   {
-    "authors": ["Kathrin Kohler"],
+    "authors": ["Kathrin Koehler"],
     "dateAdded": "2010-05-13",
     "favorite": "true",
     "genre": 
@@ -25,7 +25,7 @@
     "favorite": "true",
     "genre": 
       [
-        "sci-fi", 
+        "sci-fi",
         "speculative",
         "fiction",
         "dystopian"
@@ -58,4 +58,4 @@
     "title": "Knitting Mochimochi",
     "borrowers": []
   }
-]
+]}

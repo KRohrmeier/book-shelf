@@ -11,10 +11,10 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  const [books, setBooks] = useState([]);
+  const [bookList, setBookList] = useState([]);
 
   useEffect(() => {
-    getBooks();
+    getBookList();
   }, []);
 
   // function callAPI() {
@@ -24,10 +24,13 @@ function App() {
   // };
   // callAPI();
 
-  function getBooks() {
-    fetch('/getBooks')
+  function getBookList() {
+    fetch('/getBookList')
         .then(res => res.json())
-        .then(apiBooks => setBooks(apiBooks))
+        .then(bookList => {
+          console.log('app apiBooks.books = ', bookList.books);
+          setBookList(bookList.books)
+        })
   }
 
   return (
@@ -40,10 +43,9 @@ function App() {
       <div className='content'>
           <Navigation />
         <main>
-          <ul className='api-intro'>{books.isbn}</ul>
           <Switch>
             <Route path="/add">
-              <AddBook />
+              <AddBook bookList={bookList} />
             </Route>
             <Route path="/lend">
               <LendBook />
@@ -52,7 +54,7 @@ function App() {
               <ReturnBook />
             </Route>
             <Route path="/">
-              <Home books={books} />
+              <Home bookList={bookList} />
             </Route>
           </Switch>
         </main>

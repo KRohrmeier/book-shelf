@@ -1,4 +1,4 @@
-[
+{"books": [
   {
     "authors": ["Kathrin Kohler"],
     "dateAdded": "2010-05-13",
@@ -58,4 +58,4 @@
     "title": "Knitting Mochimochi",
     "borrowers": []
   }
-]
+]}
