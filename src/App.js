@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Switch, Route } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 
@@ -11,21 +11,24 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  const [apiResponse, setApiResponse] = useState('');
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    getBooks();
+  }, []);
 
   // function callAPI() {
-  //   fetch('http:localhost:9000/testAPI')
+  //   fetch('/testAPI')
   //       .then(res => res.text())
   //       .then(res => setApiResponse(res))
   // };
   // callAPI();
 
   function getBooks() {
-    fetch('http:localhost:9000/getBooks')
-        .then(response => response.text())
-        .then(books => console.log(books))
+    fetch('/getBooks')
+        .then(res => res.json())
+        .then(apiBooks => setBooks(apiBooks))
   }
-  getBooks();
 
   return (
     <Container fluid="md" className="App">
@@ -37,7 +40,7 @@ function App() {
       <div className='content'>
           <Navigation />
         <main>
-          <p className='api-intro'>{apiResponse}</p>
+          <ul className='api-intro'>{books.isbn}</ul>
           <Switch>
             <Route path="/add">
               <AddBook />
@@ -49,7 +52,7 @@ function App() {
               <ReturnBook />
             </Route>
             <Route path="/">
-              <Home />
+              <Home books={books} />
             </Route>
           </Switch>
         </main>

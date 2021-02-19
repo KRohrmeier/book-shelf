@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 
 import './bookshelf.css';
 
 export function Bookshelf(props) {
-  const { books = [] } = props;
+  const [books, setBooks] = useState([props.books]);
+  console.log('Bookshelf useState:books = ', books);
 
   return (
     <div className='bookshelf-container'>
