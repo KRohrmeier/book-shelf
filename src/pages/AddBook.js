@@ -67,7 +67,6 @@ export function AddBook() {
 
   function addNewBook(newBook) {
     books.push(newBook);
-    console.log('books w/pushed new book = ', books);
     setTitle('');
   }
 
