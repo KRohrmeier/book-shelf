@@ -62,6 +62,51 @@
       "pageCount": "144",
       "title": "Knitting Mochimochi",
       "borrowers": []
+    },
+    {
+      "authors": [
+        "Jennifer Robbins"
+      ],
+      "genre": [
+        "Computers"
+      ],
+      "id": "9781491960158",
+      "isbn": "9781491960158",
+      "pageCount": 808,
+      "title": "Learning Web Design",
+      "borrowers": [],
+      "favorite": false,
+      "onLoan": false
+    },
+    {
+      "authors": [
+        "Margo Lanagan"
+      ],
+      "genre": [
+        "Adventure stories"
+      ],
+      "id": "1865088269",
+      "isbn": "1865088269",
+      "pageCount": 221,
+      "title": "Black Juice",
+      "borrowers": [],
+      "favorite": false,
+      "onLoan": false
+    },
+    {
+      "authors": [
+        "Margo Lanagan"
+      ],
+      "genre": [
+        "Young Adult Fiction"
+      ],
+      "id": "9780375890741",
+      "isbn": "9780375890741",
+      "pageCount": 312,
+      "title": "Red Spikes",
+      "borrowers": [],
+      "favorite": false,
+      "onLoan": false
     }
   ]
 }

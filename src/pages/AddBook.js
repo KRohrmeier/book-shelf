@@ -15,7 +15,7 @@ export function AddBook(props) {
 
   // TODO: add a check if title already exists & option to add anyway or cancel
 
-  const { bookList = {} } = props;
+  const { bookList = {}, setBookList } = props;
   const [inputTitle, setInputTitle] = useState('');
   const [returnedBook, setReturnedBook] = useState('');
 
@@ -49,6 +49,7 @@ export function AddBook(props) {
           addBook(foundBook);
           setReturnedBook(foundBook.title);
           setInputTitle('');
+          setBookList();
         })
         .catch(error => console.log('ERROR: ', error));
     }
