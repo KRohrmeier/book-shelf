@@ -14,3 +14,7 @@
 .hidden {
   display: none;
 }
+
+span.underline {
+  text-decoration: underline;
+}

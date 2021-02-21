@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Col, Container, Row, Button } from "react-bootstrap";
 import Form from 'react-bootstrap/Form';
 
-import books from '../info/books.json';
+import { findBook } from '../services/findBook';
+import { addBook } from '../services/bookList';
 import './book.css';
 
 export function AddBook(props) {
@@ -12,97 +13,44 @@ export function AddBook(props) {
   // that you then submit when you found the title you want
   // the onBlur or look-up fields connect to api
 
+  // TODO: add a check if title already exists & option to add anyway or cancel
+
   const { bookList = {} } = props;
-  const [books, setBooks] = useState(bookList);
-  const [newTitle, setNewTitle] = useState('');
-  const [validated, setValidated] = useState(false);
-  const [returnedTitle, setReturnedTitle] = useState('');
+  const [inputTitle, setInputTitle] = useState('');
+  const [returnedBook, setReturnedBook] = useState('');
 
-  const googleAPI = "https://www.googleapis.com/books/v1/volumes";
+  console.log('** bookList from props = ', bookList);
+  console.log('** inputTitle = ', inputTitle);
+  console.log('** returnedBook = ', returnedBook);
 
-  console.log('AddBooks; props:bookList = ', bookList);
-  console.log('AddBooks; books useState = ', books);
-
-  function findBook() {
-    const queryParams = encodeURIComponent(newTitle);
-    const searchURL = `${googleAPI}?q=${queryParams}`;
-    console.log('api url = ', searchURL);
-    fetch(searchURL)
-        .then(response => response.json())
-        .then(data => {
-          const authors = data.items[0].volumeInfo.authors;
-          const apiGenre = data.items[0].volumeInfo.categories;
-          const apiIsbn = data.items[0].volumeInfo.industryIdentifiers[0].identifier;
-          const apiPageCount = data.items[0].volumeInfo.pageCount;
-          const apiTitle = data.items[0].volumeInfo.title;
-          setReturnedTitle(apiTitle);
-          console.log('setReturnedTitle with apiTitle: ', apiTitle);
-          console.log('getReturnedTitle = ', returnedTitle);
-          // setting returnedTitle above does not work??
-          addNewBook(createBookObject(authors, apiGenre, apiIsbn, apiPageCount, apiTitle));
-        })
-        .catch(error => console.error(`error : ${error}`));
-  }
-
-  function createBookObject( authors, genre, isbn, pageCount, title ) {
-    const today = new Date();
-    const formattedDate = today.toISOString().slice(0,10);
-    return (
-      {
-        "authors": authors,
-        "dateAdded": formattedDate,
-        "favorite": "false",
-        "genre": genre,
-        "isbn": isbn,
-        "onLoan": "false",
-        "pageCount": pageCount,
-        "title": title
-      }
-    )
+  function handleFocus() {
+    if (Boolean(returnedBook)) {
+      setReturnedBook('');
+    };
   }
 
   function validateInput() {
-    console.log('validate input; title from state = ', newTitle);
-    if (newTitle && newTitle.trim().length > 0) {
-      setNewTitle(newTitle.trim());
-      setValidated(true);
+    console.log('validate input');
+    if (inputTitle && inputTitle.trim().length > 0) {
       return true;
     } else {
-      setValidated(false);
       return false;
-    }
-  }
-
-  function addNewBook(newBook) {
-    // TODO: take new book info and add to db
-    // QUESTION: will that retrigger a render (since db changed?)
-    const encodedTitle = encodeURIComponent(newBook.title);
-    const apiCall = `/addBook/${encodedTitle}`;
-    console.log('title from parameter = ', newBook.title)
-    console.log('apiCall = ', apiCall);
-    fetch(apiCall)
-        .then(res => res.json())
-        .then(addedBook => {
-          console.log('api returns the added book = ', addedBook);
-        })
-  }
-
-  function handleChange(e) {
-    setNewTitle(e.target.value);
-    console.log('handleChange setNewTitle to ', e.target.value);
-    console.log('new title should match handleChange setNewTitle ', newTitle);
-  }
-
-  function handleFocus() {
-    if (validated) {
-      setValidated(false);
     }
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (validateInput()) {
-      findBook();
+    console.log('handle submit');
+
+    if (validateInput(inputTitle.trim())) {
+      console.log('handle submit - validated');
+      findBook(inputTitle)
+        .then(foundBook => {
+          addBook(foundBook);
+          setReturnedBook(foundBook.title);
+          setInputTitle('');
+        })
+        .catch(error => console.log('ERROR: ', error));
     }
   }
 
@@ -114,33 +62,23 @@ export function AddBook(props) {
           <p>Excellent!</p>
         </Col>
       </Row>
-          <Form validated={validated} onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit}>
             <Form.Group controlId='formTitle'>
               <Form.Label>Title</Form.Label>
               <Form.Control 
                   size='lg'
                   type='text'
-                  value={newTitle}
-                  isValid={validated}
-                  onChange={e => handleChange(e)}
+                  value={inputTitle}
+                  onChange={e => setInputTitle(e.target.value)}
                   onFocus={handleFocus}
               />
               <Form.Control.Feedback />
             </Form.Group>
-            {/* <p>or</p>
-            <Form.Group controlId='formISBN'>
-              <Form.Label>ISBN</Form.Label>
-              <Form.Control 
-                  size='lg' 
-                  type='text'
-                  onChange={(e) => setISBN(e.target.value)}
-              />
-            </Form.Group> */}
             <Button type='submit'>Enter new book</Button>
           </Form>
-          <p className={validated ? 'success-message' : 'hidden'}>
-            {`Added "${returnedTitle}"! You now have ${books.length} titles in your library.`}
-          </p>
+          <div className={Boolean(returnedBook) ? 'success-message' : 'hidden'}>
+            <p>Added <span className='underline'>{returnedBook}</span>!<br />You now have {bookList.length} titles in your library.</p>
+          </div>
           <p id='content'></p>
     </Container>
   )
