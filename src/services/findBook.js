@@ -18,7 +18,8 @@ export function findBook(findTitle) {
       const onLoan = false;
       const favorite = false;
       const borrowers = [];
-      foundBook = {authors, genre, id, isbn, pageCount, title, borrowers, favorite, onLoan};
+      const thumbnail = data.items[0].volumeInfo.imageLinks.thumbnail;
+      foundBook = {authors, genre, id, isbn, pageCount, title, borrowers, favorite, onLoan, thumbnail};
       console.log('find book; returning foundBook = ', foundBook);
       return foundBook;
     })

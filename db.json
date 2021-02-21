@@ -19,64 +19,40 @@
       "title": "Dictionary of Imaginary Words",
       "borrowers": [
         "Leroy Jenkins"
-      ]
+      ],
+      "thumbnail": ""
     },
     {
-      "id": 9780395404256,
-      "isbn": "9780395404256",
       "authors": [
-        "Margaret Atwood"
+        "Sofia Samatar"
       ],
-      "dateAdded": "1993-08-23",
-      "favorite": "true",
       "genre": [
-        "sci-fi",
-        "speculative",
-        "fiction",
-        "dystopian"
+        "Fiction"
       ],
-      "onLoan": "true",
-      "pageCount": "234",
-      "title": "The Handmaid's Tale",
-      "borrowers": [
-        "Leroy Jenkins",
-        "Martha Stewart",
-        "Neighbors in green house"
-      ]
+      "id": "9781931520775",
+      "isbn": "9781931520775",
+      "pageCount": 320,
+      "title": "A Stranger in Olondria",
+      "borrowers": [],
+      "favorite": false,
+      "onLoan": false,
+      "thumbnail": "http://books.google.com/books/content?id=k3Eqf0s0kT0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
     },
     {
-      "id": 9780307587053,
-      "isbn": "9780307587053",
       "authors": [
         "Anna Hrachovec"
       ],
-      "dateAdded": "2012-10-28",
-      "favorite": "false",
       "genre": [
-        "reference",
-        "knitting",
-        "crafting",
-        "hand-made"
+        "Crafts & Hobbies"
       ],
-      "onLoan": "false",
-      "pageCount": "144",
+      "id": "9780823026647",
+      "isbn": "9780823026647",
+      "pageCount": 144,
       "title": "Knitting Mochimochi",
-      "borrowers": []
-    },
-    {
-      "authors": [
-        "Jennifer Robbins"
-      ],
-      "genre": [
-        "Computers"
-      ],
-      "id": "9781491960158",
-      "isbn": "9781491960158",
-      "pageCount": 808,
-      "title": "Learning Web Design",
       "borrowers": [],
       "favorite": false,
-      "onLoan": false
+      "onLoan": false,
+      "thumbnail": "http://books.google.com/books/content?id=XwFwDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
     },
     {
       "authors": [
@@ -91,7 +67,8 @@
       "title": "Black Juice",
       "borrowers": [],
       "favorite": false,
-      "onLoan": false
+      "onLoan": false,
+      "thumbnail": "http://books.google.com/books/content?id=qKZk_b_prC8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
     },
     {
       "authors": [
@@ -106,7 +83,8 @@
       "title": "Red Spikes",
       "borrowers": [],
       "favorite": false,
-      "onLoan": false
+      "onLoan": false,
+      "thumbnail": "http://books.google.com/books/content?id=dAfuNbj3gd8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
     }
   ]
 }

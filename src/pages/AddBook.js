@@ -47,7 +47,7 @@ export function AddBook(props) {
       findBook(inputTitle)
         .then(foundBook => {
           addBook(foundBook);
-          setReturnedBook(foundBook.title);
+          setReturnedBook(foundBook);
           setInputTitle('');
           setBookList();
         })
@@ -78,9 +78,10 @@ export function AddBook(props) {
             <Button type='submit'>Enter new book</Button>
           </Form>
           <div className={Boolean(returnedBook) ? 'success-message' : 'hidden'}>
-            <p>Added <span className='underline'>{returnedBook}</span>!<br />You now have {bookList.length} titles in your library.</p>
+            <p>Added <span className='underline'>{returnedBook.title}</span></p>
+            <img src={returnedBook.thumbnail} alt='' />
+            <p>You now have {bookList.length} titles in your library.</p>
           </div>
-          <p id='content'></p>
     </Container>
   )
 }
