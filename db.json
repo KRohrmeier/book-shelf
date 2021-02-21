@@ -34,7 +34,7 @@
       "pageCount": 320,
       "title": "A Stranger in Olondria",
       "borrowers": [],
-      "favorite": false,
+      "favorite": true,
       "onLoan": false,
       "thumbnail": "http://books.google.com/books/content?id=k3Eqf0s0kT0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
     },
@@ -82,9 +82,42 @@
       "pageCount": 312,
       "title": "Red Spikes",
       "borrowers": [],
-      "favorite": false,
-      "onLoan": false,
+      "favorite": true,
+      "onLoan": true,
       "thumbnail": "http://books.google.com/books/content?id=dAfuNbj3gd8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    },
+    {
+      "authors": [
+        "Serita Stevens",
+        "Anne Klarner"
+      ],
+      "genre": [
+        "Language Arts & Disciplines"
+      ],
+      "id": "0898793718",
+      "isbn": "0898793718",
+      "pageCount": 298,
+      "title": "Deadly Doses",
+      "borrowers": [],
+      "favorite": false,
+      "onLoan": true,
+      "thumbnail": "http://books.google.com/books/content?id=r5uMsd9dBPwC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    },
+    {
+      "authors": [
+        "Sofia Samatar"
+      ],
+      "genre": [
+        "Fiction"
+      ],
+      "id": "9781618731159",
+      "isbn": "9781618731159",
+      "pageCount": 300,
+      "title": "The Winged Histories",
+      "borrowers": [],
+      "favorite": true,
+      "onLoan": false,
+      "thumbnail": "http://books.google.com/books/content?id=kuAlDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
     }
   ]
 }

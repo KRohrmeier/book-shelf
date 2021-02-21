@@ -25,3 +25,29 @@
     return fetch('http://localhost:3333/list')
       .then(data => data.json())
 }
+
+FETCH
+
+https://www.digitalocean.com/community/tutorials/js-fetch-api
+
+response.json() for JSON responses
+response.text() for XML responses
+** NOTE: Calling json() returns a promise!
+
+- Fetch API: if the request properly hits the endpoint and comes back, no error will be thrown. 
+  This means that error handling is not as simple as chaining a catch call at then end of your 
+  fetch promise chain.
+  the response object from a fetch call has an ok property that will be either true of false 
+  depending on the success of the request. You can then use Promise.reject() if ok is false:
+
+  fetch('https://jsonplaceholder.typicode.com/postsZZZ', options)
+  .then(res => {
+    if (res.ok) {
+      return res.json();
+    } else {
+      return Promise.reject({ status: res.status, statusText: res.statusText });
+    }
+  })
+  .then(res => console.log(res))
+  .catch(err => console.log('Error, with message:', err.statusText));
+

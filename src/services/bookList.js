@@ -14,10 +14,12 @@ export function addBook(bookObject) {
     },
     body: JSON.stringify(bookObject)
   })
-    .then(response => {
-      if (!response.ok) {
+    .then(res => {
+      if (!res.ok) {
         throw new Error('Network response was not ok');
-      } else response.json();
+        // return Promise.reject({ status: res.status, statusText: res.statusText });
+      } else res.json();
     })
-    .catch(error => console.log('ERROR: ', error));
+    .then(res => console.log('addBook res = ', res))
+    .catch(err => console.log('addBook ERROR, with message: ', err.statusText));
 }

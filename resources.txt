@@ -27,3 +27,7 @@ https://www.freecodecamp.org/news/create-a-react-frontend-a-node-express-backend
 and
 https://daveceddia.com/create-react-app-express-backend/
 ^^ which is where I learned about the need to proxy
+
+(for future use, perhaps) JSON Placeholder URL"
+https://jsonplaceholder.typicode.com/
+
