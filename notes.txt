@@ -1,0 +1,21 @@
+- remember to STOP and START your server after making changes
+  (did you try turning it off and on again?)
+
+- for reasons known only to computers, sometimes you didn't do anything wrong and old
+  info just got stuck. You'll need to stop the server and the app, walk away, then come 
+  back and start it all up again at which point it will work. Because.
+
+- No, I still don't know how to connect json backend so that I can modify the json from 
+  the app. I can read the json in. But appending to a json file doesn't work like appending 
+  to a text file.
+
+- ^^ json-server is how you do that! F-yeah! 
+  Well, for demoing, anyway.
+  found via: https://www.digitalocean.com/community/tutorials/how-to-call-web-apis-with-the-useeffect-hook-in-react
+  npm info: https://www.npmjs.com/package/json-server
+  Egghead.io tutorial: https://egghead.io/lessons/javascript-creating-demo-apis-with-json-server
+
+- add json-server to dev dependencies
+  - create a db.json file in root folder
+  - can use curl commands to POST, like: curl -d '{"item":"rice"}' -H 'Content-Type: application/json' -X POST http://localhost:3333/list
+  - 

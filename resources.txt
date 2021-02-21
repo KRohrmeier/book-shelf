@@ -1,0 +1,29 @@
+https://www.digitalocean.com/community/tutorials/how-to-call-web-apis-with-the-useeffect-hook-in-react
+https://www.digitalocean.com/community/tutorials/how-to-manage-state-with-hooks-on-react-components
+https://www.digitalocean.com/community/tutorials/how-to-handle-async-data-loading-lazy-loading-and-code-splitting-with-react
+
+LinkedIn Learning, Programming Foundations: APIs and Web Services
+https://www.linkedin.com/learning/programming-foundations-apis-and-web-services/considerations-of-web-services?u=2061692
+
+(not watched yet) React & Express starter Pack for Full Stack Development
+https://www.youtube.com/watch?v=v0t42xBIYIs
+
+Programmable Web /books apis:
+https://www.programmableweb.com/category/books/apis?category=19996&deadpool=1&limit=10&order=field_popularity
+
+Google Books api
+https://developers.google.com/books/docs/v1/getting_started#JSONP
+https://www.googleapis.com/books/v1/volumes?q=Learning+Web+Design <- example
+
+for future use, perhaps: read geek api gives recommendations based on input titles
+https://www.readgeek.com/api
+
+React Router for routing to pages in a SPA:
+https://reactrouter.com/web/guides/quick-start
+
+
+React with Node/Express backend (used in Take-1)
+https://www.freecodecamp.org/news/create-a-react-frontend-a-node-express-backend-and-connect-them-together-c5798926047c/
+and
+https://daveceddia.com/create-react-app-express-backend/
+^^ which is where I learned about the need to proxy

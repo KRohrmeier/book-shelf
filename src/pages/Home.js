@@ -1,6 +1,6 @@
 import React from 'react';
-import Bookshelf from '../Bookshelf';
-import BookFilters from '../BookFilters';
+import Bookshelf from '../components/Bookshelf';
+import BookFilters from '../components/BookFilters';
 
 export function Home(props) {
   const { bookList = {} } = props;
