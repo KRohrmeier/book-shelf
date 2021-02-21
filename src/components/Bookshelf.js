@@ -17,9 +17,9 @@ export function Bookshelf(props) {
       </Row>
         {bookList.map((book) => {
           return (
-            <Row key={book.isbn} className='bookshelf-row'>
-              <Col sm={6} className='title-col col'>{book.title}</Col>
-              <Col sm={6} className='author-col col'>by {book.authors}</Col>
+            <Row key={`${book.isbn}-row`} className='bookshelf-row'>
+              <Col key={`${book.isbn}-title`} sm={6} className='title-col col'>{book.title}</Col>
+              <Col key={`${book.isbn}-author`} sm={6} className='author-col col'>by {book.authors}</Col>
             </Row>
           )
         })}

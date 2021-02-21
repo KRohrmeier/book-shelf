@@ -19,3 +19,9 @@
   - create a db.json file in root folder
   - can use curl commands to POST, like: curl -d '{"item":"rice"}' -H 'Content-Type: application/json' -X POST http://localhost:3333/list
   - 
+
+- keyword "return" comes before "fetch" (and not in the "then"s):
+  export function getBookList() {
+    return fetch('http://localhost:3333/list')
+      .then(data => data.json())
+}
