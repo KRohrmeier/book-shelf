@@ -7,14 +7,14 @@
         "Kathrin Koehler"
       ],
       "dateAdded": "2010-05-13",
-      "favorite": "true",
+      "favorite": true,
       "genre": [
         "reference",
         "imaginary",
         "rare",
         "first edition"
       ],
-      "onLoan": "false",
+      "onLoan": false,
       "pageCount": "100000",
       "title": "Dictionary of Imaginary Words",
       "borrowers": [

@@ -16,10 +16,25 @@
 
 .bookshelf-row {
   justify-content: center;
+  align-items: center;
+  padding-top: 0.25rem;
+  border-bottom: 0.015rem solid #372601;
 }
 
 .bookshelf-row .col {
   padding: 0.25rem;
+}
+
+.favorite-book-icon {
+  width: 2.75rem;
+}
+
+.non-favorite-book {
+  height: 2.25rem;
+}
+
+#favorite-book-id {
+  margin-left: 0.5rem;
 }
 
 #book-count {
