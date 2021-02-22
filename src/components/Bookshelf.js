@@ -1,19 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { Row, Col } from "react-bootstrap";
 
-import BookFilters from './BookFilters';
-import heartBook from '../images/heart_book.svg';
 import './bookshelf.css';
 
 export function Bookshelf(props) {
   const bookList = props.bookList;
-  const filteredBookList = bookList.filter(book => book.onLoan);
+  const filteredOnLoanBookList = bookList.filter(book => book.onLoan);
+  const filteredFavoritesBookList = bookList.filter(book => book.favorite);
   console.log('Bookshelf props:bookList = ', bookList);
-  console.log('Bookshelf filtered bookList = ', filteredBookList);
+  console.log('Bookshelf onLoan bookList = ', filteredOnLoanBookList);
+  console.log('Bookshelf favorites bookList = ', filteredFavoritesBookList);
 
   return (
     <div className='bookshelf-container'>
-      <BookFilters/>
       <Row className='booktitle-row'>
         <Col xs={12}>
           <h1>My Library</h1>
@@ -26,7 +25,6 @@ export function Bookshelf(props) {
               <Col key={`${book.isbn}-favorite`} sm={1} className='favorite-col col'>
                 {book.favorite 
                     ? <div className='favorite-book-icon'>
-                        <img id='favorite-book-id' src={heartBook} alt="favorite book"/>
                       </div> 
                     : <div className='non-favorite-book'></div>
                 }

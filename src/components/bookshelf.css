@@ -26,15 +26,14 @@
 }
 
 .favorite-book-icon {
-  width: 2.75rem;
+  content: url('../images/heart_book.svg');
+  width: 2.5rem;
+  margin-left: 0.5rem;
 }
 
 .non-favorite-book {
   height: 2.25rem;
-}
-
-#favorite-book-id {
-  margin-left: 0.5rem;
+  width: 2.5rem;
 }
 
 #book-count {
