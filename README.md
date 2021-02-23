@@ -1,4 +1,15 @@
-# Getting Started with Create React App
+# To run the app
+1) In one terminal, start the json-server: `npm run api`
+   This will run the json-server on port 3333 (configured in package.json "api" script)
+
+2) In another terminal, start the app: `npm start`
+
+You can go to `localhost:3333/list` to see the live api/database (which is `db.json` in the root folder of the app)
+Note: all objects must have a numeric "id" or the api will fail
+
+I used an article from Digital Ocean, [How To Call Web APIs with the useEffect Hook in React](https://www.digitalocean.com/community/tutorials/how-to-call-web-apis-with-the-useeffect-hook-in-react), for the json-server.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
