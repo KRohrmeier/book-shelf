@@ -8,10 +8,10 @@ import './book.css';
 
 export function AddBook(props) {
 
-  // TODO: use an onBlur event or make the 
-  // enter title / ISBN be "look-up by title / ISBN" fields 
-  // that you then submit when you found the title you want
-  // the onBlur or look-up fields connect to api
+  // TODO: add an intermediary step that lists top 5? 10? matches so book lover
+  // can select the title, edition, etc they want to add from the list Google Books
+  // returns, rather than current implementation of automatically adding the first book
+  // (that's just the easiest way to get things working; not an actual design choice)
 
   // TODO: add a check if title already exists & option to add anyway or cancel
 

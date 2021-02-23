@@ -51,7 +51,7 @@ class App extends Component {
                 <AddBook bookList={this.state.bookList} setBookList={this.setBookList} />
               </Route>
               <Route path="/lend">
-                <LendBook />
+                <LendBook bookList={this.state.bookList} />
               </Route>
               <Route path="/return">
                 <ReturnBook />

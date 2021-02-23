@@ -17,3 +17,8 @@
   -moz-text-stroke-width: 0.5px;  
   -webkit-text-stroke-width: 0.5px;
 }
+
+.App .row {
+  margin-left: 0rem;
+  margin-right: 0rem;
+}

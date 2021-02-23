@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Button, Col, Container, Row } from "react-bootstrap";
 import Form from 'react-bootstrap/Form';
 
-import books from '../info/books.json';
 import './book.css';
 
-export function LendBook() {
+export function LendBook(props) {
+  const { bookList = {} } = props;
   const [title, setTitle] = useState('');
   const [searchTitle, setSearchTitle] = useState('');
   const [found, setFound] = useState(false)
@@ -13,7 +13,7 @@ export function LendBook() {
 
   // TODO: when title found, check that it's in & not already checked-out
   function checkForTitle() {
-    const bookTitles = books.map(book => book.title);
+    const bookTitles = bookList.map(book => book.title);
     bookTitles.forEach(bookTitle => {
       if (bookTitle.toLowerCase().includes(searchTitle.toLowerCase())) {
       setTitle(bookTitle);
@@ -69,15 +69,6 @@ export function LendBook() {
               />
               <Form.Control.Feedback />
             </Form.Group>
-            {/* <p>or</p>
-            <Form.Group controlId='formISBN'>
-              <Form.Label>ISBN</Form.Label>
-              <Form.Control 
-                  size='lg' 
-                  type='text'
-                  onChange={(e) => setISBN(e.target.value)}
-              />
-            </Form.Group> */}
             <Button type='submit'>Search for book</Button>
           </Form>
           <Form.Group className={found ? 'found' : 'hidden'}>
