@@ -19,16 +19,6 @@ export function BookFilters({ setCurrentFilter }) {
         >
           All
         </Button>
-        <DropdownButton
-            title="Title"
-            className="filter-button"
-          >
-        </DropdownButton>
-        <DropdownButton
-            title="Author"
-            className="filter-button"
-          >
-        </DropdownButton>
         <Button
             id='favorites'
             className="filter-button"
@@ -43,6 +33,16 @@ export function BookFilters({ setCurrentFilter }) {
         >
           On loan
         </Button>
+        <DropdownButton
+            title="Title"
+            className="filter-button"
+          >
+        </DropdownButton>
+        <DropdownButton
+            title="Author"
+            className="filter-button"
+          >
+        </DropdownButton>
       </Row>
   )
 }
