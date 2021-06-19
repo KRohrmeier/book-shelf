@@ -4,20 +4,8 @@ import { Row, Col } from "react-bootstrap";
 import './bookshelf.css';
 
 export const Bookshelf = ({bookList, currentFilter}) => {
-  console.log('** * ** Bookshelf, props.bookList = ', bookList);
-  // const [bookList, setBookList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [bookListToShow, setBookListToShow] = useState([]);
-  console.log('** * ** Bookshelf, bookListToShow = ', bookListToShow);
-  // const [currentFilter, setCurrentFilter] = useState('all');
-  
-  // useEffect(() => {
-  //   let mounted = true;
-  //   if (mounted) {
-  //     setCurrentFilter();
-  //   };
-  //   return () => mounted = false;
-  // }, []);
 
   useEffect(() => {
     let mounted = true;
@@ -31,18 +19,15 @@ export const Bookshelf = ({bookList, currentFilter}) => {
   }, [bookList]);
 
   useEffect(() => {
-  console.log('currentFilter = ', currentFilter);
     let mounted = true;
     if (mounted) {
       switch(currentFilter) {
         case 'favorites':
           const favoriteBookList = bookList.filter(book => book.favorite);
           setBookListToShow(favoriteBookList);
-          console.log('currentFilter, favoriteBookList = ', favoriteBookList);
           break;
         case 'onLoan':
             const onLoanBookList = bookList.filter(book => book.onLoan);
-            console.log('currentFilter, onLoanBookList = ', onLoanBookList);
             setBookListToShow(onLoanBookList);
             break;
         case 'all':

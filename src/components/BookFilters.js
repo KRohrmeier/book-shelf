@@ -7,7 +7,6 @@ import './bookfilters.css';
 
 export function BookFilters({ setCurrentFilter }) {
   function handleClick(filterButton) {
-    console.log('** filter button pressed = ', filterButton);
     setCurrentFilter(filterButton);
   }
   return (

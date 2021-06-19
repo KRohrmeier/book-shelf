@@ -4,7 +4,6 @@ import BookFilters from '../components/BookFilters';
 
 export function Home(props) {
   const { bookList = {} } = props;
-  console.log('Home; props:books = ', bookList);
 
   const [currentFilter, setCurrentFilter] = useState('all');
 
