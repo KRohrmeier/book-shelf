@@ -50,3 +50,13 @@ medium, you can copy the line of text and place it where it's relevant. Please s
 requirements for more information.
 Example 1: “Tree” icon by Edward Boatman from the Noun Project.
 Example 2: “Tree” icon by Edward Boatman, from thenounproject.com.
+
+
+happy_book_... book emoticons attribution:
+Happy by AomAm from the Noun Project
+
+kiss_book book emoticon attribution:
+kiss by AomAm from the Noun Project
+
+naughty_book book emoticon attribution:
+naughty by AomAm from the Noun Project
