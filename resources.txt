@@ -31,6 +31,10 @@ https://daveceddia.com/create-react-app-express-backend/
 (for future use, perhaps) JSON Placeholder URL"
 https://jsonplaceholder.typicode.com/
 
+YOU CAN ANIMATE SVGs!:
+https://css-tricks.com/guide-svg-animations-smil/
+https://css-tricks.com/video-screencasts/135-three-ways-animate-svg/
+
 heart book by Alvaro Cabrera from the Noun Project
 https://thenounproject.com/term/heart-book/1312879/
 You must add attribution:
