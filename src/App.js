@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Switch, Route } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 
@@ -11,60 +11,48 @@ import { getBookList } from './services/bookList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.setBookList = this.setBookList.bind(this);
-  }
+const App = () => {
+  const [bookList, setBookList] = useState([]);
 
-  state = {
-    bookList: []
-  }
-
-  componentDidMount() {
-    this.setBookList()
-  }
-
-  setBookList() {
-    console.log('App: setBookList called');
+  useEffect(() => {
+    let mounted = true;
     getBookList()
-    .then(items => {
-      this.setState({
-        bookList: items
-      });
-    })
-  }
+      .then((list) => {
+        if (mounted) {
+          setBookList(list);
+        }
+      })
+      return () => mounted = false;
+  }, []);
 
-  render() {
-    return (
-      <Container fluid="md" className="App">
-        <header className="App-header">
-          <h1>
-            Book S(h)elf
-          </h1>
-        </header>
-        <div className='content'>
-            <Navigation />
-          <main>
-            <Switch>
-              <Route path="/add">
-                <AddBook bookList={this.state.bookList} setBookList={this.setBookList} />
-              </Route>
-              <Route path="/lend">
-                <LendBook bookList={this.state.bookList} />
-              </Route>
-              <Route path="/return">
-                <ReturnBook />
-              </Route>
-              <Route path="/">
-                <Home bookList={this.state.bookList} />
-              </Route>
-            </Switch>
-          </main>
-        </div>
-      </Container>
-    );
-  }
+  return (
+    <Container fluid="md" className="App">
+      <header className="App-header">
+        <h1>
+          Book S(h)elf
+        </h1>
+      </header>
+      <div className='content'>
+          <Navigation />
+        <main>
+          <Switch>
+            <Route path="/add">
+              <AddBook bookList={bookList} setBookList={setBookList} />
+            </Route>
+            <Route path="/lend">
+              <LendBook bookList={bookList} />
+            </Route>
+            <Route path="/return">
+              <ReturnBook />
+            </Route>
+            <Route path="/">
+              <Home bookList={bookList} />
+            </Route>
+          </Switch>
+        </main>
+      </div>
+    </Container>
+  );
 }
 
 export default App;

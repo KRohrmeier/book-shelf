@@ -5,12 +5,20 @@ import Button from 'react-bootstrap/Button';
 
 import './bookfilters.css';
 
-export function BookFilters() {
+export function BookFilters({ setCurrentFilter }) {
   function handleClick(filterButton) {
     console.log('** filter button pressed = ', filterButton);
+    setCurrentFilter(filterButton);
   }
   return (
       <Row className='filter-list'>
+        <Button
+            id='all'
+            className="filter-button"
+            onClick={e => handleClick(e.target.id)}
+        >
+          All
+        </Button>
         <DropdownButton
             title="Title"
             className="filter-button"
