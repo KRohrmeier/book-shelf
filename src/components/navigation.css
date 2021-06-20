@@ -4,7 +4,7 @@ ul[class*=navigation] {
   justify-content: space-around;
   align-items: center;
   list-style-type: none;
-  background: linear-gradient(20deg, rgb(12, 146, 203), #aad50e);
+  background-color: #603910;
   margin: 0.25rem 0 0;
   padding: 0.5rem 0;
 }

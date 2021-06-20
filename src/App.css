@@ -4,15 +4,15 @@
 }
 
 .App-header {
-  background: linear-gradient(20deg, rgba(233, 233, 41, 1), #b7d83e);
+  background: linear-gradient(20deg, rgb(238, 238, 43), #b7d83e);
   min-height: 20vh;
   display: flex;
   align-items: center;
   justify-content: center;
 
   font-size: calc(10px + 2vmin);
-  -moz-text-stroke-color: #4C194C;
-  -webkit-text-stroke-color: #4C194C;
+  -moz-text-stroke-color: #45321e;
+  -webkit-text-stroke-color: #45321e;
   -moz-text-stroke-width: 1px;  
   -webkit-text-stroke-width: 1px;
 }
