@@ -17,6 +17,7 @@
   "scripts": {
     "api": "json-server db.json -p 3333 --delay 1500",
     "start": "react-scripts start",
+    "start:all": "npm run api & npm run start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

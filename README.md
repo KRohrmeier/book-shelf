@@ -1,11 +1,14 @@
 # To run the app locally
-1) In one terminal, start the json-server: `npm run api`
+
+1) to start both the json-server (acting as DB) and the app, type `npm run start:all`
+this runs two scripts (which you can also run individually, should you choose):
+   1) In one terminal, start the json-server: `npm run api`
    This will run the json-server on port 3333 (configured in package.json "api" script)
 
-2) In another terminal, start the app: `npm start`
+   2) In another terminal, start the app: `npm start`
 
 You can go to `localhost:3333/list` to see the live api/database (which is `db.json` in the root folder of the app)
-Note: all objects must have a numeric "id" or the api will fail
+**Note**: all objects must have a numeric "id" or the api will fail
 
 I used an article from Digital Ocean, [How To Call Web APIs with the useEffect Hook in React](https://www.digitalocean.com/community/tutorials/how-to-call-web-apis-with-the-useeffect-hook-in-react), for the json-server.
 
