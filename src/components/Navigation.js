@@ -21,13 +21,13 @@ export function Navigation() {
         </Link>
       </Nav.Item>
       <Nav.Item as='li'>
-        <Link to="/add">Add</Link>
+        <Link to="/add">Add a book</Link>
       </Nav.Item>
       <Nav.Item as='li'>
-        <Link to="/lend">Lend</Link>
+        <Link to="/lend">Lend a book</Link>
       </Nav.Item>
       <Nav.Item as='li'>
-        <Link to="/return">Returned</Link>
+        <Link to="/return">Returned book</Link>
       </Nav.Item>
     </Nav>
   )
