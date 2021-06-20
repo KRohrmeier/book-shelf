@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Bookshelf from '../components/Bookshelf';
 import BookFilters from '../components/BookFilters';
+import CuteBooksInARow from '../components/CuteBooksInARow';
 
 export function Home(props) {
   const { bookList = {} } = props;
@@ -11,6 +12,9 @@ export function Home(props) {
     <>
       <BookFilters setCurrentFilter={setCurrentFilter}/>
       <Bookshelf bookList={bookList} currentFilter={currentFilter}/>
+      <footer>
+        <CuteBooksInARow/>
+      </footer>
     </>
   )
 }

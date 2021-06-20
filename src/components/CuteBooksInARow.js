@@ -8,7 +8,7 @@ import naughty_book from '../images/naughty_book.svg';
 
 export const CuteBooksInARow = () => {
   return (
-    <Row className='book-icon-container'>
+    <Row className='justify-content-space-around'>
       <Col xs={3} sm={2}>
         <div className='svg-background-1'>
           <img className='book-emoticon' src={happy_book_squint} alt='smiling book' />
