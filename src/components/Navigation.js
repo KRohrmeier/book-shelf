@@ -11,13 +11,7 @@ export function Navigation() {
       <Nav as='ul' className='navigation'>
       <Nav.Item as='li'>
         <Link to="/">
-          <button id='logo-button'>
-            <img 
-              id='logo-id' 
-              src={logo} 
-              alt='Bookshelf home'
-            />
-          </button>
+            Home
         </Link>
       </Nav.Item>
       <Nav.Item as='li'>
