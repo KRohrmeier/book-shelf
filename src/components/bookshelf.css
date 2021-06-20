@@ -1,5 +1,5 @@
 .bookshelf-container {
-  background: linear-gradient(RGBA(253,187,45,0.19) 0%, RGBA(34,193,195,0.15) 100%);
+  background: linear-gradient(rgba(34,193,195,0.15), rgba(233, 233, 41, 0.5));
   color: #372601;
   padding-bottom: 2rem;;
 }
