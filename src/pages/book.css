@@ -32,7 +32,7 @@ span.underline {
 }
 .svg-background-2 {
   padding-top: 1rem;
-  background-color: rgba(236, 170, 242, 0.72);
+  background-color: rgba(236, 170, 242, 0.7);
   border-radius: 20%;
   margin: 1rem 0;
 }
@@ -44,7 +44,13 @@ span.underline {
 }
 .svg-background-4 {
   padding-top: 1rem;
-  background-color: rgba(170, 220, 242, 0.769);
+  background-color: rgba(170, 220, 242, 0.7);
+  border-radius: 20%;
+  margin: 1rem 0;
+}
+.svg-background-5 {
+  padding-top: 1rem;
+  background-color: rgba(252, 164, 56, 0.7);
   border-radius: 20%;
   margin: 1rem 0;
 }

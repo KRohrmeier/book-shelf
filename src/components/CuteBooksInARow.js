@@ -5,6 +5,7 @@ import happy_book_squint from '../images/happy_book_squint.svg';
 import happy_book_laugh from '../images/happy_book_laugh.svg';
 import kiss_book from '../images/kiss_book.svg';
 import naughty_book from '../images/naughty_book.svg';
+import flower from '../images/noun_Flower_2.svg';
 
 export const CuteBooksInARow = () => {
   return (
@@ -22,6 +23,12 @@ export const CuteBooksInARow = () => {
       <Col xs={3} sm={2}>
         <div className='svg-background-3'>
           <img className='book-emoticon' id='kiss_book' src={kiss_book} alt='kissing book' />
+        </div>
+      </Col>
+       {/* TODO: hide on xs screens since only 4 fit across */}
+      <Col xs={3} sm={2}>
+        <div className='svg-background-5'>
+          <img className='book-emoticon' src={flower} alt='flower' />
         </div>
       </Col>
       <Col xs={3} sm={2}>
