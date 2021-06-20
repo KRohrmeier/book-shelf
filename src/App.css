@@ -11,9 +11,8 @@
   justify-content: center;
 
   font-size: calc(10px + 2vmin);
-  color: white;
-  -moz-text-stroke-color: #00291d;
-  -webkit-text-stroke-color: #00291d;
+  -moz-text-stroke-color: #4C194C;
+  -webkit-text-stroke-color: #4C194C;
   -moz-text-stroke-width: 1px;  
   -webkit-text-stroke-width: 1px;
 }

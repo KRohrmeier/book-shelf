@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Switch, Route } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
+import { Col, Row } from 'react-bootstrap';
 
 import Navigation from './components/Navigation';
 import Home from './pages/Home';
 import AddBook from './pages/AddBook';
 import LendBook from './pages/LendBook';
 import ReturnBook from './pages/ReturnBook';
+import bookshelf from './images/bookshelf.svg';
 import { getBookList } from './services/bookList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -28,9 +30,14 @@ const App = () => {
   return (
     <Container fluid="md" className="App">
       <header className="App-header">
-        <h1>
-          Book S(h)elf
-        </h1>
+        <Row>
+          <Col>
+            <img src={bookshelf} alt='books on shelf with flower' />
+          </Col>
+          <Col>
+            <h1>Book S(h)elf</h1>
+          </Col>
+        </Row>
       </header>
       <div className='content'>
           <Navigation />
