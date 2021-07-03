@@ -5,6 +5,7 @@ import './bookshelf.css';
 
 export const Bookshelf = ({bookList, currentFilter}) => {
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
   const [bookListToShow, setBookListToShow] = useState([]);
 
   useEffect(() => {
