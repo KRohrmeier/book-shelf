@@ -1,0 +1,7 @@
+{
+    "app_id": "bookshelf-k-dev-kceja",
+    "config_version": 20210101,
+    "name": "bookshelf-k-dev",
+    "location": "US-VA",
+    "deployment_model": "LOCAL"
+}
