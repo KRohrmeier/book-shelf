@@ -2,7 +2,7 @@
 
 export function getBookList() {
   return fetch('http://localhost:3333/list')
-    .then(response => response.json())
+    .then(response => response.json());
 }
 
 export function addBook(bookObject) {
@@ -21,5 +21,5 @@ export function addBook(bookObject) {
       } else res.json();
     })
     .then(res => console.log('addBook res = ', res))
-    .catch(err => console.log('addBook ERROR, with message: ', err.statusText));
+    .catch(err => console.error('addBook ERROR, with message: ', err.statusText));
 }

@@ -9,7 +9,7 @@ import './index.css';
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <App authorized={true} />
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

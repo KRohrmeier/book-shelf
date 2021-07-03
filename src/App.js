@@ -3,18 +3,21 @@ import { Switch, Route } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import { Col, Row } from 'react-bootstrap';
 
+import Login from './components/Login';
 import Navigation from './components/Navigation';
 import Home from './pages/Home';
 import AddBook from './pages/AddBook';
 import LendBook from './pages/LendBook';
 import ReturnBook from './pages/ReturnBook';
-import bookshelf from './images/bookshelf.svg';
+import { ReactComponent as Bookshelf } from './images/bookshelf.svg';
 import { getBookList } from './services/bookList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-const App = () => {
+const App = ({ authorized }) => {
+  // const [loading, setLoading] = useState(false);
   const [bookList, setBookList] = useState([]);
+  // const [error, setError] = useState(false);
 
   useEffect(() => {
     let mounted = true;
@@ -27,12 +30,17 @@ const App = () => {
       return () => mounted = false;
   }, []);
 
+  const onSVGMouseOver = (animationID) => {
+    const animateElement = document.getElementById(animationID);
+    animateElement.beginElement();
+  };
+
   return (
     <Container fluid="md" className="App">
       <header className="App-header">
         <Row>
           <Col>
-            <img src={bookshelf} alt='books on shelf with flower' />
+            <Bookshelf onMouseOver={() => onSVGMouseOver('bookshelf')} />
           </Col>
           <Col>
             <h1>Book S(h)elf</h1>
@@ -40,7 +48,9 @@ const App = () => {
         </Row>
       </header>
       <div className='content'>
-          <Navigation />
+        {
+          authorized ? <Navigation /> : <Login />
+        }
         <main>
           <Switch>
             <Route path="/add">
