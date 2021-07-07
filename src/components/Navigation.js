@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import Nav from 'react-bootstrap/Nav';
-import logo from '../images/logo.jpg';
+import logo from '../images/bookstars-bookshelf.png';
 
 import './navigation.css';
 
@@ -11,23 +11,17 @@ export function Navigation() {
       <Nav as='ul' className='navigation'>
       <Nav.Item as='li'>
         <Link to="/">
-          <button id='logo-button'>
-            <img 
-              id='logo-id' 
-              src={logo} 
-              alt='Bookshelf home'
-            />
-          </button>
+            Home
         </Link>
       </Nav.Item>
       <Nav.Item as='li'>
-        <Link to="/add">Add</Link>
+        <Link to="/add">Add a book</Link>
       </Nav.Item>
       <Nav.Item as='li'>
-        <Link to="/lend">Lend</Link>
+        <Link to="/lend">Lend a book</Link>
       </Nav.Item>
       <Nav.Item as='li'>
-        <Link to="/return">Returned</Link>
+        <Link to="/return">Returned book</Link>
       </Nav.Item>
     </Nav>
   )

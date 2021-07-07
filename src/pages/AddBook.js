@@ -4,9 +4,12 @@ import Form from 'react-bootstrap/Form';
 
 import { findBook } from '../services/findBook';
 import { addBook } from '../services/bookList';
+import CuteBooksInARow from '../components/CuteBooksInARow';
 import './book.css';
 
 export function AddBook(props) {
+
+  // TODO: ummm, why it say "returned book" in places? Some functionality needs sorting
 
   // TODO: add an intermediary step that lists top 5? 10? matches so book lover
   // can select the title, edition, etc they want to add from the list Google Books
@@ -59,29 +62,34 @@ export function AddBook(props) {
     <Container className='add-book book'>
       <Row>
         <Col xs={12}>
-          <h1>A new book for your library?</h1>
+          <h1 className='page-heading'>A new book for your library?</h1>
           <p>Excellent!</p>
         </Col>
       </Row>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group controlId='formTitle'>
-              <Form.Label>Title</Form.Label>
-              <Form.Control 
-                  size='lg'
-                  type='text'
-                  value={inputTitle}
-                  onChange={e => setInputTitle(e.target.value)}
-                  onFocus={handleFocus}
-              />
-              <Form.Control.Feedback />
-            </Form.Group>
-            <Button type='submit'>Enter new book</Button>
-          </Form>
-          <div className={Boolean(returnedBook) ? 'success-message' : 'hidden'}>
-            <p>Added <span className='underline'>{returnedBook.title}</span></p>
-            <img src={returnedBook.thumbnail} alt='' />
-            <p>You now have {bookList.length} titles in your library.</p>
-          </div>
+        <Form onSubmit={handleSubmit}>
+          <Form.Group controlId='formTitle'>
+            <Form.Label>Title</Form.Label>
+            <Form.Control 
+                size='lg'
+                type='text'
+                value={inputTitle}
+                onChange={e => setInputTitle(e.target.value)}
+                onFocus={handleFocus}
+            />
+            <Form.Control.Feedback />
+          </Form.Group>
+          <Button type='submit'>Enter new book</Button>
+        </Form>
+      <Row className='justify-content-space-around'>
+        <div className={Boolean(returnedBook) ? 'success-message' : 'hidden'}>
+          <p>Added <span className='underline'>{returnedBook.title}</span></p>
+          <img src={returnedBook.thumbnail} alt='' />
+          <p>You now have {bookList.length} titles in your library.</p>
+        </div>
+      </Row>
+      <footer>
+        <CuteBooksInARow/>
+      </footer>
     </Container>
   )
 }

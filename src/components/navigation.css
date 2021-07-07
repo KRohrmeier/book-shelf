@@ -4,7 +4,7 @@ ul[class*=navigation] {
   justify-content: space-around;
   align-items: center;
   list-style-type: none;
-  background-color: #936501;
+  background-color: #603910;
   margin: 0.25rem 0 0;
   padding: 0.5rem 0;
 }
@@ -28,18 +28,6 @@ ul[class*=navigation] {
 [class*=navigation] a:active {
   color: #c3feff;
   border-bottom: none;
-}
-
-button#logo-button {
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
-
-#logo-id {
-  display: inline;
-  width: 75px;
-  cursor: pointer;
 }
 
 #logo-button:focus {

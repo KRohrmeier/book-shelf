@@ -5,22 +5,19 @@ import Button from 'react-bootstrap/Button';
 
 import './bookfilters.css';
 
-export function BookFilters() {
+export function BookFilters({ setCurrentFilter }) {
   function handleClick(filterButton) {
-    console.log('** filter button pressed = ', filterButton);
+    setCurrentFilter(filterButton);
   }
   return (
       <Row className='filter-list'>
-        <DropdownButton
-            title="Title"
+        <Button
+            id='all'
             className="filter-button"
-          >
-        </DropdownButton>
-        <DropdownButton
-            title="Author"
-            className="filter-button"
-          >
-        </DropdownButton>
+            onClick={e => handleClick(e.target.id)}
+        >
+          All
+        </Button>
         <Button
             id='favorites'
             className="filter-button"
@@ -35,6 +32,16 @@ export function BookFilters() {
         >
           On loan
         </Button>
+        <DropdownButton
+            title="Title"
+            className="filter-button"
+          >
+        </DropdownButton>
+        <DropdownButton
+            title="Author"
+            className="filter-button"
+          >
+        </DropdownButton>
       </Row>
   )
 }

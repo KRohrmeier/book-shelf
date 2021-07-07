@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, Col, Container, Row } from "react-bootstrap";
 import Form from 'react-bootstrap/Form';
 
+import CuteBooksInARow from '../components/CuteBooksInARow';
 import './book.css';
 
 export function LendBook(props) {
@@ -53,7 +54,7 @@ export function LendBook(props) {
     <Container className='lend-book book'>
       <Row>
         <Col xs={12}>
-          <h1>Someone wants to borrow a book?</h1>
+          <h1 className='page-heading'>Someone wants to borrow a book?</h1>
           <p>Sweet!</p>
         </Col>
       </Row>
@@ -76,7 +77,9 @@ export function LendBook(props) {
             <Form.Label>Yes, </Form.Label>
             <Button className={found ? 'found' : 'hidden'} onClick={(e) => handleFoundClick(e)}>{title}</Button>
           </Form.Group>
-
+          <footer>
+            <CuteBooksInARow/>
+          </footer>
     </Container>
   )
 }

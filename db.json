@@ -118,6 +118,22 @@
       "favorite": true,
       "onLoan": false,
       "thumbnail": "http://books.google.com/books/content?id=kuAlDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    },
+    {
+      "authors": [
+        "Michael Ende"
+      ],
+      "genre": [
+        "Juvenile Fiction"
+      ],
+      "id": "9781938073991",
+      "isbn": "9781938073991",
+      "pageCount": 240,
+      "title": "Momo",
+      "borrowers": [],
+      "favorite": true,
+      "onLoan": false,
+      "thumbnail": "http://books.google.com/books/content?id=0y7lBQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
     }
   ]
 }
