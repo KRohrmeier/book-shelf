@@ -27,13 +27,21 @@ reportWebVitals(); -->
 <body>
   <h1>Building Your Own Unicorn Army</h1>
   <h2>Battlecorns, assemble!</h2>
+  <p>A successful unicorn army needs a knowledgable and organized bookkeeper.</p>
   <form method="post" action="/addBookkeeper">
-    <label>Enter Your Name</label><br>
-    Given name: <input type="text" name="givenName" required>
-    Email: <input type="text" name="email" required>
-    Phone number: <input type="text" name="phone">
+    <fieldset>
+      <legend>Enter your Battlecorn army bookkeeper's information</legend>
+      <label for='bookkeeper-name'>Bookkeeper's name: </label>
+      <input id='bookkeeper-name' type="text" name="givenName" required>
+      <br />
+      <label for='bookkeeper-email'>Bookkeeper's email: </label>
+      <input id='bookkeeper-email' type="text" name="email" required>
+      <br />
+      <label for='bookkeeper-phone'>Bookkeeper's phone: </label>
+      <input id='bookkeeper-phone' type="text" name="phone">
+    </fieldset>
     <!-- Favorite?: heart checkbox?? oh yeah.-->
-    <input type="submit" value="Add Book">
+    <input type="submit" value="Add Bookkeeper">
   </form>
 </body>
 </html>
