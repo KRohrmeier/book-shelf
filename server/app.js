@@ -1,8 +1,11 @@
 var express = require("express");
 var bodyParser = require('body-parser');
+const dotenv = require("dotenv");
 var app = express();
 var port = 3000;
 
+// w/line below, process.env now has the keys and values defined in your .env file
+dotenv.config();
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.listen(port, () => {
@@ -14,7 +17,7 @@ app.listen(port, () => {
 
 var mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb+srv://{userName}:{password}@cluster0.xy67p.mongodb.net/bookshelf_dev", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.DB_MONGOOSE_CONNECT_URL, { useNewUrlParser: true, useUnifiedTopology: true });
 
 var bookkeeperSchema = new mongoose.Schema({
     givenName: String,
