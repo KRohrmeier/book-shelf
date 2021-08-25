@@ -40,7 +40,7 @@ class App extends Component {
       <Container fluid="md" className="App">
         <header className="App-header">
           <h1>
-            Book S(h)elf
+            I AM HERE - Book S(h)elf
           </h1>
         </header>
         <div className='content'>

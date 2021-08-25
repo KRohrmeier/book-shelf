@@ -1,4 +1,9 @@
-# To run the app locally
+# To run the server that connects to Mongo, from the mongo branch
+1) cd into server directory of the app
+2) run `node app.js`
+
+# To run the app locally with the json server, from json branch
+
 1) In one terminal, start the json-server: `npm run api`
    This will run the json-server on port 3333 (configured in package.json "api" script)
 
