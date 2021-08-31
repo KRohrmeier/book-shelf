@@ -1,0 +1,36 @@
+.filter-list.row {
+   justify-content: space-around;
+   align-items: center;
+   list-style: none;
+  }
+
+  .filter-list .btn.btn-primary, .filter-list .dropdown-toggle.btn.btn-primary {
+    color: #45321e;
+    background-color: rgba(195, 254, 255, 0.1);
+    border-color: #603910;
+    margin: 0.45rem;
+    padding: 0.45rem;
+  }
+
+  .filter-button.btn.btn-primary:focus, .dropdown-toggle.btn.btn-primary:focus {
+    background-color: rgba(183, 216, 62, 0.2);
+    box-shadow: 3px 3px 3px rgba(183, 216, 62, 0.5);
+    font-weight: 600;
+  }
+
+  .filter-button.btn.btn-primary:hover, .dropdown-toggle.btn.btn-primary:hover {
+  background-color: rgba(183, 216, 62, 0.2);
+  box-shadow: 3px 3px 3px rgba(183, 216, 62, 0.5);
+  font-weight: 600;
+}
+
+  .filter-button.btn.btn-primary:active, .dropdown-toggle.btn.btn-primary:active {
+    background-color: rgba(183, 216, 62, 0.2);
+    font-weight: 600;
+  }
+
+  .filter-button.btn.btn-primary:focus-visible, .dropdown-toggle.btn.btn-primary:focus-visible {
+    background-color: rgba(183, 216, 62, 0.2);
+    box-shadow: 3px 3px 3px rgba(183, 216, 62, 0.5);
+    font-weight: 600;
+  }
