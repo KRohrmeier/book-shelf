@@ -1,45 +1,20 @@
 {
   "name": "my-book-shelf",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.7.1",
-    "bootstrap": "^4.6.0",
-    "react": "^17.0.1",
-    "react-bootstrap": "^1.4.3",
-    "react-dom": "^17.0.1",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.2",
-    "web-vitals": "^1.1.0"
-  },
+  "version": "1.0.0",
+  "description": "a bookish lending library app for book-lovers",
+  "main": "index.js",
   "scripts": {
-    "api": "json-server db.json -p 3333 --delay 1500",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KRohrmeier/book-shelf.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KRohrmeier/book-shelf/issues"
   },
-  "devDependencies": {
-    "json-server": "^0.16.3"
-  }
+  "homepage": "https://github.com/KRohrmeier/book-shelf#readme"
 }
