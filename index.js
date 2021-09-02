@@ -3,7 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-// const cors = require('cors');
+const cors = require('cors');
 
 require('./models/Bookkeeper');
 
@@ -14,8 +14,7 @@ require('./models/Bookkeeper');
 // the core http module that NodeJS provides us to create these routes.
 const app = express();  
 
-// TODO: download cors
-// app.use(cors());
+app.use(cors());
 app.use(bodyParser.json());
 
 const dbUser = process.env.MONGODB_USER;
