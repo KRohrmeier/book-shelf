@@ -1,13 +1,25 @@
 const mongoose = require('mongoose');
 
 const bookkeeperSchema = new mongoose.Schema({
-  givenName: String,
+  givenName: {
+    type: String,
+    required: true
+  },
   familyName: String,
-  nickName: String,
-  email: String,
-  phone: String
+  nickName:  {
+    type: String,
+    required: true
+  },
+  email: {
+    type: String,
+    required: true
+  },
+  phone: String,
+  dateJoined: Date,
+  dateUpdated: {
+    type: Date,
+    default: Date.now
+  }
 });
 
-const Bookkeeper = mongoose.model("BookkeeperModel", bookkeeperSchema);
-
-// export default Bookkeeper;
+module.exports = mongoose.model("BookkeeperModel", bookkeeperSchema);
