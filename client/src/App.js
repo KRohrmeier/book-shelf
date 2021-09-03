@@ -17,7 +17,7 @@ const App = () => {
 
   const getBookkeepers = async () => {
     let res = await bookkeeperService.getAll();
-    console.log('App.js getBookkeeper res = ', res);
+    console.log('App.js getBookkeeper responded');
     setbookkeepers(res);
 
     /* //how to fetch without axios? this not work, "net::ERR_CONNECTION_REFUSED" and "TypeError: failed to fetch"
@@ -43,14 +43,14 @@ const App = () => {
   ) };
 
   const renderBookkeeper = (bookkeeper) => {
-    console.log('in renderBookkeeper = ', bookkeeper);
+    console.log('in renderBookkeeper');
     return (
       <div className='bookkeeper-div'>
         <h3>{bookkeeper.nickName}</h3>
         <ul>
           <li key={`${bookkeeper._id}-givenname`}>{bookkeeper.givenName}</li>
           <li key={`${bookkeeper._id}-email`}>{bookkeeper.email}</li>
-          {bookkeeper.friends
+          {bookkeeper.friends.length > 0
             ? <div>
                 <h4>friends with the bookish:</h4>
                 {renderFriends(bookkeeper.friends)}

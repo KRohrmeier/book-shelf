@@ -17,6 +17,8 @@ router.get('/', async (req, res) => {
 
 router.post('/', (req, res) => {
   console.log('* * * addBook; req.body) = ', req.body);
+
+  // create the book obj
   const newBook = new Book({
     title: req.body.title,
     author: req.body.author,
@@ -26,6 +28,7 @@ router.post('/', (req, res) => {
     genre: req.body.genre
   });
 
+  // add book to the approp. bookkeeper
 });
 
 module.exports = router;
