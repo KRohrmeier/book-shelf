@@ -15,16 +15,19 @@ const bookSchema = new mongoose.Schema({
   },
   pageCount: Number,
   lendingHistory: [{
-    borrower: String,
+    borrowerId: String,
+    borrowerName: String,
     startDate: {
       type: Date,
       default: Date.now
     },
     endDate: Date
   }],
-  genre: [{
-    type: String
-  }]
+  genre: [String],
+  dateAdded: {
+    type: Date,
+    default: Date.now
+  },
 });
 
 module.exports = mongoose.model('BookModel', bookSchema);

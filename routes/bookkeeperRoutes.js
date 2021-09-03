@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
   try {
     res.json(bookkeepers);
   } catch (error) {
-    res.json({message: error});
+    res.json({ message: error.message });
   }
 });
 
@@ -30,15 +30,15 @@ router.post("/", (req, res) => {
     console.log('* * * addBookkeeper; parsedData.statusMessage = ', parsedData.statusMessage);
   })
   .catch((error) => {
-    res.json({message: error})
+    res.json({ message: error.message })
   });
 });
 
 router.get('/:email', (req, res) => {
   console.log('specific bookkeeper email = ', req.params.email);
   Bookkeeper.findOne({'email': req.params.email}, function(err, res) {
-    if (err) {
-      return {message: err}
+    if (error) {
+      return { message: error.message }
     } else {
       return res;
     }
@@ -56,7 +56,7 @@ router.delete('/:email', async (req, res) => {
     console.log('delete removedBookkeeper = ', removedBookkeeper);
     res.send(removedBookkeeper);
   } catch (error) {
-    res.send({message: error});
+    res.send({ message: error.message });
   }
 
 });
@@ -74,7 +74,7 @@ router.patch('/:email/:field', async (req, res) => {
     );
     res.json(updatedBookkeeper);
   } catch (error) {
-    res.json({ message: error })
+    res.json({ message: error.message })
   }
 });
 
