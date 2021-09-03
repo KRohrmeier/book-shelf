@@ -36,6 +36,12 @@ const App = () => {
     */
   };
 
+  const renderFriends = (friends) => {
+    return friends.map((friend) => 
+    // TODO: make a get call for the id that's in the friend array & return that below
+    <li key={`${friend}-friend`}>{friend}</li>
+  ) };
+
   const renderBookkeeper = (bookkeeper) => {
     console.log('in renderBookkeeper = ', bookkeeper);
     return (
@@ -44,6 +50,13 @@ const App = () => {
         <ul>
           <li key={`${bookkeeper._id}-givenname`}>{bookkeeper.givenName}</li>
           <li key={`${bookkeeper._id}-email`}>{bookkeeper.email}</li>
+          {bookkeeper.friends
+            ? <div>
+                <h4>friends with the bookish:</h4>
+                {renderFriends(bookkeeper.friends)}
+              </div>
+            : null
+          }
         </ul>
       </div>
     );

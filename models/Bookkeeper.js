@@ -15,6 +15,7 @@ const bookkeeperSchema = new mongoose.Schema({
     required: true
   },
   phone: String,
+  friends: [String],
   dateJoined: Date,
   dateUpdated: {
     type: Date,
